@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  x: 1.5
+  'y': 1.5
+  z: 1.5
+  mag: 1.5
+  spect: MyString
+  color: 1.5
+
+two:
+  name: MyString
+  x: 1.5
+  'y': 1.5
+  z: 1.5
+  mag: 1.5
+  spect: MyString
+  color: 1.5

@@ -1,0 +1,13 @@
+<h2><%= @star.name %></h2>
+<ul>
+	<li>X coord (Earth relative):<%= @star.x %></li>
+	<li>Y coord (Earth relative):<%= @star.y %></li>
+	<li>Z coord (Earth relative):<%= @star.z %></li>
+	<li>Absolute Magnitude: <%= @star.mag %></li>
+	<li>Spectral Class: <%= @star.spect %></li>
+	<li>Color: <%= @star.color %></li>
+</ul>
+<h3>Stars within 3 parsecs</h3>
+<ul><% for star in @nearstars do %>
+	<li><%= link_to star.name, star_path(star) %></li>
+<% end %><ul>

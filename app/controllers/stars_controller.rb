@@ -7,6 +7,6 @@ class StarsController < ApplicationController
 	end
 
 	def new
-		#Star.populate
+		Star.populate
 	end
 end

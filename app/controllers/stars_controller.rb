@@ -6,7 +6,4 @@ class StarsController < ApplicationController
 		@nearstars = Star.distanceSort(@star, @nearstars)
 	end
 
-	def new
-		Star.populate
-	end
 end

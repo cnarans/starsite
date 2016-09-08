@@ -1,5 +1,6 @@
 <h2><%= @star.name %></h2>
 <h4><%= Star.distance(Star.new(:x => 0, :y => 0, :z => 0), @star).round(2) %> parsecs from Earth</h4>
+<div style = '<%= @star.visualize %>'></div>
 <ul>
 	<li>X coord (Earth relative):<%= @star.x %></li>
 	<li>Y coord (Earth relative):<%= @star.y %></li>

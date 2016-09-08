@@ -69,7 +69,72 @@ class Star < ActiveRecord::Base
   		return returnArr
   	end
 
-  	def test
-  		puts "testing"
+  	def visualize
+  		returnString = ""
+  		size = Star.getSize(self.spect)
+  		radius = size/2
+  		color = "\#" + Star.getR(self.color)+Star.getG(self.color)+Star.getB(self.color)
+  		returnString = "width: #{size}px; height: #{size}px; -webkit-border-radius: #{radius}px; -moz-border-radius: #{radius}px; border-radius: #{radius}px; background: #{color};"
+		return returnString
+  	end
+
+  	def Star.getR(color)
+  		if color >=0.45
+  			return "ff"
+  		else
+  			mult = ((0.40 + color)/0.85)*100
+  			r = (mult+155).round
+  			return r.to_s(16)
+  		end
+  	end
+
+  	def Star.getG(color)
+  		if color <=0.45
+  			mult = ((0.40 + color)/0.85)*71
+  			g = (mult+178).round.to_s(16)
+  		else
+  			mult = ((2.0-color)/1.55)*167
+  			g = (mult+82).round.to_s(16)
+  		end
+  		return g
+  	end
+
+  	def Star.getB(color)
+  		if color <= 0.50
+  			return "ff"
+  		else
+  			mult = ((2.0-color)/1.5)*255
+  			b = mult.round.to_s(16)
+  			if b.length ==1
+  				b = "0" + b
+  			end
+  			return b
+  		end
+  	end
+
+  	def Star.getSize(spectral)
+  		x = spectral.downcase
+  		x = x[0]
+  		if x=="o"
+  			size = 500
+  		elsif x=="b"
+  			size = 300
+  		elsif x=="a"
+  			size = 200
+  		elsif x=="f"
+  			size = 150
+  		elsif x=="g"
+  			size = 100
+  		elsif x=="k"
+  			size = 50
+  		elsif x=="m"
+  			size = 20
+  		elsif x=="d"
+  			size = 10
+  		else
+  			size = 20
+  		end
+  		size = size * 2
+  		return size
   	end
 end

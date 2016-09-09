@@ -1,1 +1,3 @@
 So far, this is just a simple website that shows the details of all stars within 15 parsecs on Earth.  All stellar data was taken from the HYG database at Astronexus http://www.astronexus.com/hyg
+
+Run Star.populate from the console in order to populate that database.

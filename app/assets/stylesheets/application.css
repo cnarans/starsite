@@ -17,8 +17,18 @@
 body {
 	background:black;
 	color:white;
+	display: flex;
 }
 
 body a {
 	color:white;
+}
+
+.visualize {
+	margin: auto;
+    width: 50%;
+}
+
+.info {
+
 }
